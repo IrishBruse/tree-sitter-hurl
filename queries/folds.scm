@@ -5,7 +5,7 @@
 (request) @fold
 (response) @fold
 (header) @fold
-(request_section) @fold
+(request_section)+ @fold
 (body) @fold
 (response_section) @fold
 (multipart_form_data_section) @fold

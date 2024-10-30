@@ -1,7 +1,8 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "hurl",
   "rules": {
-    "hurl_file": {
+    "test-foo": {
       "type": "SEQ",
       "members": [
         {
@@ -15,7 +16,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_comment_or_new_line"
+            "name": "lt"
           }
         }
       ]
@@ -33,7 +34,7 @@
                 "type": "REPEAT",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "_comment_or_new_line"
+                  "name": "lt"
                 }
               },
               {
@@ -62,7 +63,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_comment_or_new_line"
+                "name": "lt"
               },
               {
                 "type": "BLANK"
@@ -72,7 +73,7 @@
         ]
       }
     },
-    "_comment_or_new_line": {
+    "lt": {
       "type": "PREC_RIGHT",
       "value": 0,
       "content": {
@@ -118,7 +119,7 @@
             "type": "REPEAT1",
             "content": {
               "type": "SYMBOL",
-              "name": "_comment_or_new_line"
+              "name": "lt"
             }
           },
           {
@@ -132,7 +133,7 @@
             "type": "REPEAT",
             "content": {
               "type": "SYMBOL",
-              "name": "request_section"
+              "name": "request-section"
             }
           },
           {
@@ -163,7 +164,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         },
         {
           "type": "REPEAT",
@@ -313,7 +314,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -326,12 +327,12 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
-    "request_section": {
-      "type": "CHOICE",
+    "request-section": {
+      "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
@@ -381,7 +382,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         },
         {
           "type": "SYMBOL",
@@ -389,7 +390,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -405,7 +406,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_comment_or_new_line"
+            "name": "lt"
           },
           {
             "type": "CHOICE",
@@ -426,7 +427,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "_comment_or_new_line"
+                  "name": "lt"
                 },
                 {
                   "type": "SYMBOL",
@@ -437,7 +438,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_comment_or_new_line"
+            "name": "lt"
           }
         ]
       }
@@ -454,7 +455,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_comment_or_new_line"
+            "name": "lt"
           },
           {
             "type": "CHOICE",
@@ -475,7 +476,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "_comment_or_new_line"
+                  "name": "lt"
                 },
                 {
                   "type": "SYMBOL",
@@ -486,7 +487,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_comment_or_new_line"
+            "name": "lt"
           }
         ]
       }
@@ -503,7 +504,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_comment_or_new_line"
+            "name": "lt"
           },
           {
             "type": "CHOICE",
@@ -524,7 +525,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "_comment_or_new_line"
+                  "name": "lt"
                 },
                 {
                   "type": "SYMBOL",
@@ -535,7 +536,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_comment_or_new_line"
+            "name": "lt"
           }
         ]
       }
@@ -552,7 +553,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_comment_or_new_line"
+            "name": "lt"
           },
           {
             "type": "CHOICE",
@@ -573,7 +574,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "_comment_or_new_line"
+                  "name": "lt"
                 },
                 {
                   "type": "SYMBOL",
@@ -584,7 +585,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_comment_or_new_line"
+            "name": "lt"
           }
         ]
       }
@@ -601,7 +602,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_comment_or_new_line"
+            "name": "lt"
           },
           {
             "type": "REPEAT",
@@ -622,7 +623,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         },
         {
           "type": "REPEAT",
@@ -642,7 +643,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         },
         {
           "type": "REPEAT",
@@ -736,7 +737,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -810,7 +811,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -839,7 +840,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -930,7 +931,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -951,7 +952,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -972,7 +973,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -993,7 +994,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -1014,7 +1015,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -1035,7 +1036,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -1056,7 +1057,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -1077,7 +1078,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -1098,7 +1099,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -1119,7 +1120,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -1140,7 +1141,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -1161,7 +1162,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -1182,7 +1183,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comment_or_new_line"
+          "name": "lt"
         }
       ]
     },
@@ -3445,11 +3446,7 @@
   "extras": [
     {
       "type": "PATTERN",
-      "value": "[\\s\\p{Zs}\\uFEFF\\u2060\\u200B]"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "comment"
+      "value": "\\s"
     }
   ],
   "conflicts": [],
