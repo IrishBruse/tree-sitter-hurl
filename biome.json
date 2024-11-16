@@ -4,17 +4,22 @@
     "enabled": true
   },
   "formatter": {
-    "enabled": true,
-    "lineWidth": 100
+    "enabled": true
   },
   "vcs": { "enabled": true, "clientKind": "git" },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
       "style": {
-        "all": true
-      }
+        "all": true,
+        "useNamingConvention": "off"
+      },
+      "correctness": {
+        "all": true,
+        "noUndeclaredVariables": "off",
+        "noUnusedVariables": "off"
+      },
+      "all": true
     }
   }
 }

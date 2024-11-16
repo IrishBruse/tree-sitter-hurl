@@ -89,6 +89,25 @@
     "fields": {}
   },
   {
+    "type": "boolean_option",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "template",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bytes",
     "named": true,
     "fields": {},
@@ -193,6 +212,11 @@
     }
   },
   {
+    "type": "certificate_query",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "compressed_option",
     "named": true,
     "fields": {},
@@ -291,10 +315,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "lt",
-          "named": true
-        },
         {
           "type": "request",
           "named": true
@@ -614,6 +634,26 @@
       "types": [
         {
           "type": "quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "hurl_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "lt",
           "named": true
         }
       ]
@@ -1269,7 +1309,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -1286,6 +1326,10 @@
         },
         {
           "type": "insecure_option",
+          "named": true
+        },
+        {
+          "type": "lt",
           "named": true
         },
         {
@@ -1510,6 +1554,14 @@
       "required": false,
       "types": [
         {
+          "type": "body_query",
+          "named": true
+        },
+        {
+          "type": "certificate_query",
+          "named": true
+        },
+        {
           "type": "cookie_query",
           "named": true
         },
@@ -1523,6 +1575,14 @@
         },
         {
           "type": "regex_query",
+          "named": true
+        },
+        {
+          "type": "status_query",
+          "named": true
+        },
+        {
+          "type": "url_query",
           "named": true
         },
         {
@@ -1733,7 +1793,7 @@
           "named": true
         },
         {
-          "type": "request-section",
+          "type": "request_section",
           "named": true
         },
         {
@@ -1744,11 +1804,11 @@
     }
   },
   {
-    "type": "request-section",
+    "type": "request_section",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -1948,26 +2008,6 @@
     }
   },
   {
-    "type": "test-foo",
-    "named": true,
-    "root": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "entry",
-          "named": true
-        },
-        {
-          "type": "lt",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "unicode_char",
     "named": true,
     "fields": {},
@@ -2138,7 +2178,7 @@
       "required": true,
       "types": [
         {
-          "type": "boolean",
+          "type": "boolean_option",
           "named": true
         },
         {
@@ -2364,6 +2404,10 @@
     "named": false
   },
   {
+    "type": "Expire-Date",
+    "named": false
+  },
+  {
     "type": "GET",
     "named": false
   },
@@ -2389,6 +2433,10 @@
   },
   {
     "type": "HTTP/2",
+    "named": false
+  },
+  {
+    "type": "Issuer",
     "named": false
   },
   {
@@ -2421,6 +2469,18 @@
   },
   {
     "type": "PUT",
+    "named": false
+  },
+  {
+    "type": "Serial-Number",
+    "named": false
+  },
+  {
+    "type": "Start-Date",
+    "named": false
+  },
+  {
+    "type": "Subject",
     "named": false
   },
   {
@@ -2464,7 +2524,15 @@
     "named": false
   },
   {
+    "type": "[Form]",
+    "named": false
+  },
+  {
     "type": "[MultipartFormData]",
+    "named": false
+  },
+  {
+    "type": "[Multipart]",
     "named": false
   },
   {
@@ -2473,6 +2541,10 @@
   },
   {
     "type": "[QueryStringParams]",
+    "named": false
+  },
+  {
+    "type": "[Query]",
     "named": false
   },
   {
@@ -2504,8 +2576,8 @@
     "named": false
   },
   {
-    "type": "body",
-    "named": false
+    "type": "body_query",
+    "named": true
   },
   {
     "type": "bytes",
@@ -2513,6 +2585,10 @@
   },
   {
     "type": "cacert",
+    "named": false
+  },
+  {
+    "type": "certificate",
     "named": false
   },
   {
@@ -2768,8 +2844,8 @@
     "named": false
   },
   {
-    "type": "status",
-    "named": false
+    "type": "status_query",
+    "named": true
   },
   {
     "type": "t",
@@ -2792,16 +2868,16 @@
     "named": false
   },
   {
-    "type": "url",
-    "named": false
-  },
-  {
     "type": "urlDecode",
     "named": false
   },
   {
     "type": "urlEncode",
     "named": false
+  },
+  {
+    "type": "url_query",
+    "named": true
   },
   {
     "type": "variable",
