@@ -1551,10 +1551,14 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "body_query",
+          "named": true
+        },
+        {
+          "type": "bytes_query",
           "named": true
         },
         {
@@ -1566,6 +1570,10 @@
           "named": true
         },
         {
+          "type": "duration_query",
+          "named": true
+        },
+        {
           "type": "header_query",
           "named": true
         },
@@ -1574,7 +1582,15 @@
           "named": true
         },
         {
+          "type": "md5_query",
+          "named": true
+        },
+        {
           "type": "regex_query",
+          "named": true
+        },
+        {
+          "type": "sha256_query",
           "named": true
         },
         {
@@ -2580,8 +2596,8 @@
     "named": true
   },
   {
-    "type": "bytes",
-    "named": false
+    "type": "bytes_query",
+    "named": true
   },
   {
     "type": "cacert",
@@ -2628,8 +2644,8 @@
     "named": true
   },
   {
-    "type": "duration",
-    "named": false
+    "type": "duration_query",
+    "named": true
   },
   {
     "type": "e",
@@ -2768,8 +2784,8 @@
     "named": false
   },
   {
-    "type": "md5",
-    "named": false
+    "type": "md5_query",
+    "named": true
   },
   {
     "type": "n",
@@ -2832,8 +2848,8 @@
     "named": false
   },
   {
-    "type": "sha256",
-    "named": false
+    "type": "sha256_query",
+    "named": true
   },
   {
     "type": "split",

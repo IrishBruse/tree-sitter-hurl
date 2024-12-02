@@ -842,15 +842,16 @@ module.exports = grammar({
     value_string_text: ($) => prec.right(repeat1(token.immediate(/[^#\n\\]/))),
 
     // value-string-escaped-char: "\\" ("#" | "\\" | "\b" | "\f" | "\n" | "\r" | "\t" | "\u" unicode-char )
-
     value_string_escaped_char: ($) =>
       seq(
         "\\",
         choice("#", "\\", "b", "f", "n", "r", "t", seq("u", $.unicode_char))
       ),
 
+    // oneline-string: "`" (oneline-string-content | template)* "`"
     oneline_string: ($) =>
-      seq(/`[^`]/, repeat(choice($.oneline_string_content, $.template)), "`"),
+      seq("`", repeat(choice($.oneline_string_content, $.template)), "`"),
+
     oneline_string_content: ($) =>
       prec.left(
         repeat1(choice($.oneline_string_text, $.oneline_string_escaped_char))

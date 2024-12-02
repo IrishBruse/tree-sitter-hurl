@@ -1452,20 +1452,20 @@
           "name": "variable_query"
         },
         {
-          "type": "STRING",
-          "value": "duration"
+          "type": "SYMBOL",
+          "name": "duration_query"
         },
         {
-          "type": "STRING",
-          "value": "bytes"
+          "type": "SYMBOL",
+          "name": "bytes_query"
         },
         {
-          "type": "STRING",
-          "value": "sha256"
+          "type": "SYMBOL",
+          "name": "sha256_query"
         },
         {
-          "type": "STRING",
-          "value": "md5"
+          "type": "SYMBOL",
+          "name": "md5_query"
         }
       ]
     },
@@ -1983,6 +1983,14 @@
         }
       ]
     },
+    "exist_predicate": {
+      "type": "STRING",
+      "value": "exists"
+    },
+    "is_empty_predicate": {
+      "type": "STRING",
+      "value": "isEmpty"
+    },
     "include_predicate": {
       "type": "SEQ",
       "members": [
@@ -1995,6 +2003,34 @@
           "name": "predicate_value"
         }
       ]
+    },
+    "integer_predicate": {
+      "type": "STRING",
+      "value": "isInteger"
+    },
+    "float_predicate": {
+      "type": "STRING",
+      "value": "isFloat"
+    },
+    "boolean_predicate": {
+      "type": "STRING",
+      "value": "isBoolean"
+    },
+    "string_predicate": {
+      "type": "STRING",
+      "value": "isString"
+    },
+    "collection_predicate": {
+      "type": "STRING",
+      "value": "isCollection"
+    },
+    "date_predicate": {
+      "type": "STRING",
+      "value": "isDate"
+    },
+    "iso_date_predicate": {
+      "type": "STRING",
+      "value": "isIsoDate"
     },
     "predicate_value": {
       "type": "CHOICE",
@@ -2298,19 +2334,6 @@
       "type": "PATTERN",
       "value": "[^\"\\\\]+"
     },
-    "invalid_quoted_string_escaped_char": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "\\"
-        },
-        {
-          "type": "PATTERN",
-          "value": "[^\"\\f\\r\\tu\\\\]"
-        }
-      ]
-    },
     "quoted_string_escaped_char": {
       "type": "SEQ",
       "members": [
@@ -2363,6 +2386,19 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    "invalid_quoted_string_escaped_char": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\\"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\"\\f\\r\\tu\\\\]"
         }
       ]
     },
@@ -2589,8 +2625,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "PATTERN",
-          "value": "`[^`]"
+          "type": "STRING",
+          "value": "`"
         },
         {
           "type": "REPEAT",
